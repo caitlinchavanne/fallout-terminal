@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "terminal";
+  src: url(fonts/ShareTechMono-Regular.ttf); }
+@keyframes blink {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+body {
+  background-color: black;
+  font-family: terminal;
+  font-size: 31px;
+  color: #1aff80;
+  top: 1px;
+  cursor: url(images/cursor.cur); }
+  body #loadcontent {
+    display: none; }
+    body #loadcontent span.cursor {
+      display: none; }
+  body #header {
+    display: none; }
+    body #header .headline {
+      line-height: 40px; }
+    body #header #password .attempt-block {
+      display: inline-block;
+      background: #1aff80; }
+    body #header #netblock {
+      display: none; }
+  body div.screen {
+    position: absolute;
+    display: none; }
+  body #hack-container table {
+    box-sizing: border-box; }
+    body #hack-container table tr .space-cell, body #hack-container table tr .pointer-cell {
+      color: black; }
+  body #doc-sign {
+    top: 26%;
+    display: none; }
+  body #cmd {
+    position: absolute;
+    bottom: 2%; }
+    body #cmd .cursor {
+      font-size: 45px; }
+  body .highline {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 7px; }
+  body .regline {
+    letter-spacing: .25px; }
+  body .selectable {
+    display: block;
+    color: #1aff80;
+    text-decoration: none; }
+  body .selectable:hover {
+    background-color: #1aff80;
+    color: black; }
+  body .blink {
+    animation: blink .5s infinite; }
+
+/*# sourceMappingURL=style.css.map */

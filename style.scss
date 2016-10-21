@@ -1,0 +1,171 @@
+//create "terminal" font from ShareTechMono font file
+@mixin default {
+    postion: relative;
+    display: inline-block;
+}
+
+@font-face {
+    font-family: "terminal";
+    src: url(fonts/ShareTechMono-Regular.ttf);
+}
+//color variable for the terminal font color
+$font-color : rgb(26,255,128);
+
+@keyframes blink {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+body {
+    
+    background-color:black;
+    font-family: terminal;
+    font-size:31px;
+    color: $font-color;
+    top: 1px;
+    cursor: url(images/cursor.cur);
+    
+    #loadcontent {
+        display: none;
+        span.cursor {
+            display: none;
+        }
+    }
+    #header {
+        display:none;
+        .headline {
+            
+            line-height: 40px;
+        }
+        #welcome {
+            
+        }
+        #password {
+            #attempts {
+                
+            }
+            .attempt-block {
+                
+                display: inline-block;
+                background: $font-color;
+                
+            }
+            #attempt1 {
+                
+            }
+            #attempt2 {
+                
+            }
+            #attempt3 {
+                
+            }       
+            #attempt4 {
+                
+            }
+        }
+        #netblock {
+            display:none;
+            span.userlogin {
+                
+            } 
+        }
+    }
+    div.screen {
+        position:absolute;
+        display:none;
+    }
+    #hack-container {
+        table {
+        box-sizing: border-box;
+            
+            tr {
+
+                td {
+
+                }
+
+                .space-cell, .pointer-cell {
+                color: black;
+
+                }
+                
+                .margin-cell {
+
+                }
+
+            }
+            
+        }
+    }
+    
+    #error {
+        
+    }
+    
+    #home {
+       
+        #docs {
+            
+        }
+        
+        #safe {
+            
+        }
+    }
+    
+    #documents {
+        
+    }
+    
+    #doc-sign {
+        top: 26%;
+        display:none;
+        
+    }
+    
+    #safe-control {
+        
+    }
+    
+    #locking {
+        
+    }
+    
+    #unlocking {
+        
+    }
+    
+    #cmd {
+        position: absolute;
+        bottom: 2%;
+        
+        .cursor {
+            font-size:45px;
+        }
+    }
+    
+    .highline {
+        display: inline-block;
+        padding-top:10px;
+        padding-bottom: 7px;
+    }
+    
+    .regline {
+        letter-spacing: .25px;
+    }
+    
+    .selectable {
+        display: block;
+        color: $font-color;
+        text-decoration: none;
+    }
+    
+    .selectable:hover {
+        background-color: $font-color;
+        color: black;
+    }
+    
+    .blink {
+        animation: blink .5s infinite;
+    }
+    
+}

@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>  
+    <title>Terminal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts/jquery-3.1.1.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/hack.js"></script>
+    <script>  
+    
+   $(document).ready(function (){
+        $("span.userlogin").text("<User Login- Jackie Hudson>");
+       displayAttempts();
+       console.log(password);
+       console.log(brackLines);
+       
+     
+   });
+    
+    </script>
+</head>
+    
+<body> 
+<!-- start screen container -->
+    <div id="start">
+        <span class="pointer">></span><span class="cursor blink">&#8718;</span>
+    </div>
+    
+<!-- load screen -->
+    <div id="loadcontent">
+        <span id="loadln1">WELCOME TO ROBCO INDUSTRIES (TM) TERMLINK</span><br><br>
+        <span id="cmd1"><span class="pointer">></span><span class="cursor blink">&#8718;</span><span id="cmd1text">SET TERMINAL/INQUIRE</span></span><br><br>
+        <span id="loadln2">RIT-V300</span><br><br>
+        <span id="cmd2"><span class="pointer">></span><span class="cursor blink">&#8718;</span><span id="cmd2text">SET FILE/PROTECTION-OWNER:RWED ACCOUNTS.F<br>
+        <span id="cmd3"><span class="pointer">></span><span class="cursor blink">&#8718;</span><span id="cmd3text">SET HALT RESTART/MAINT<br><br>
+        <span id="loadln3">Initializing Robco Industries(TM) MF Boot Agent v 2.3.0</span><br>
+        <span id="loadln4">RETROS BIOS</span><br>
+        <span id="loadln5">RBIOS-4.02.08.00 52EE5.E7.E8</span><br>
+        <span id="loadln6">Copyright 2201-2203 Robco Ind.</span><br>
+        <span id="loadln7">Uppermen: 64 KB</span><br>
+        <span id="loadln8">Root (5AB)</span><br>
+        <span id="loadln9">Maintenance Mode</span><br><br>
+        <span id="cmd4"><span class="pointer">></span><span class="cursor blink">&#8718;</span><span id="cmd4text">RUN DEBUG/ACCOUNTS.F
+    </div>
+    
+<!-- full heading container -->
+    <div id="header">     
+    <!-- main welcome line -->
+        <span id ="welcome" class="headline">Welcome to ROBCO Industries (TM) Termlink</span><br>
+        <span id="password" class="headline">Password Required<br><br>
+        <span id="attempts"></span> ATTEMPT(S) LEFT:  
+        <span class="attempt-block" id="attempt1">[]</span>
+        <span class="attempt-block" id="attempt2">[]</span>
+        <span class="attempt-block" id="attempt3">[]</span>
+        <span class="attempt-block" id="attempt4">[]</span></span><br><br>
+        <span id ="netblock">=============================================<br>
+        Suffolk County Charter School Network<br>
+        <span class="userlogin"></span><br>
+        =============================================<br><br></span>
+    </div> 
+<!-- hack layout container -->
+    <div class="screen" id="hack-container">
+        <table>
+            <tr>
+                <td id=“margin1” class=“margin-cell”>0xFC49</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line1” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin17” class=“margin-cell”>0xFD09</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line17” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console16” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin2” class=“margin-cell”>0xFC55</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line2” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin18” class=“margin-cell”>0xFD15</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line18” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console15” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin3” class=“margin-cell”>0xFC61</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line3” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin19” class=“margin-cell”>0xFD21</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line19” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console14” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin4” class=“margin-cell”>0xFC6D</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line4” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin20” class=“margin-cell”>0xFD2D</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line20” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console13” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin5” class=“margin-cell”>0xFC79</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line5” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin21” class=“margin-cell”>0xFD39</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line21” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console12” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin6” class=“margin-cell”>0xFC85</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line6” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin22” class=“margin-cell”>0xFD45</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line22” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console11” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin7” class=“margin-cell”>0xFC91</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line7” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin23” class=“margin-cell”>0xFD51</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line23” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console10” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin8” class=“margin-cell”>0xFC9D</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line8” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin24” class=“margin-cell”>0xFD5D</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line24” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console9” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin9” class=“margin-cell”>0xFCA9</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line9” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin25” class=“margin-cell”>0xFD69</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line25” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console8” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin10” class=“margin-cell”>0xFCB5</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line10” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin26” class=“margin-cell”>0xFD75</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line26” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console7” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin11” class=“margin-cell”>0xFCC1</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line11” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin27” class=“margin-cell”>0xFD81</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line27” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console6” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin12” class=“margin-cell”>0xFCCD</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line12” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin28” class=“margin-cell”>0xFD8D</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line28” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console5” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin13” class=“margin-cell”>0xFCD9</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line13” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin29” class=“margin-cell”>0xFD99</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line29” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console4” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin14” class=“margin-cell”>0xFCE5</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line14” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin30” class=“margin-cell”>0xFDA5</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line30” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console3” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin15” class=“margin-cell”>0xFCF1</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line15” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin31” class=“margin-cell”>0xFDB1</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line31” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console2” class=“console-cell”></td>
+            </tr>
+            <tr>
+                <td id=“margin16” class=“margin-cell”>0xFCFD</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line16” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“margin32” class=“margin-cell”>0xFDBD</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id=“line32” class=“line-cell”>............</td>
+                <td id="space1" class="space-cell">x</td>
+                <td id="console-pointer#" class="pointer-cell">></td>
+                <td id=“console1” class=“console-cell”>............</td>
+            </tr>
+        </table>
+    </div>
+<!-- error screen container -->    
+    <div class="screen" id="error">
+    </div>
+<!-- home screen container -->    
+    <div class="screen" id="home" style="display:none;">
+        <span class="selectable" id="docs">[ >Documents ]</span><br>
+        <span class="selectable" id="safe">[ >Safe Control ]</span>
+    </div>
+<!-- document screen container -->    
+    <div class="screen" id="documents" style="display:none;">
+        <span id="greet" class="highline">Principal Hudson,</span><br><br>
+        <span id="letter" class="regline">
+            Again I thank you for your school's willingness to participate in the Nutritional Alternative Paste Program, or NAPP for short. You and your students are doing a service to this country by helping us push the limits on our knowledge of food and nutrition science.<br>
+            During the period of this program, nothing but NAP should be served to the students. No outside food should be tolerated on school grounds. We will be sending scientists periodically to observe reactions to NAP, and ensure proper testing conditions.<br>
+            Noncompliance will result in funds revoked, so please make sure your faculty and students remain obedient.<br>
+        </span>
+    </div>
+<!-- document signature screen container -->    
+    <div class="screen" id="doc-sign">
+        <span id="sign">-Dr. Jerry Gibson</span>
+    </div>
+<!-- safe status and control screen container -->    
+    <div class="screen" id="safe-control" style="display:none;">
+    
+        <p>Safe Lock Mechanism Status: <span id="status"></span><br><br>
+        <a id="engage" class="selectable"></a></p>
+    
+    </div>
+<!-- safe locking screen container -->    
+    <div class="screen" id="locking"></div>
+<!-- safe unlocking screen container -->    
+    <div class="screen" id="unlocking"></div>
+<!-- console line container -->    
+    <div id="cmd" style="display:none;">
+        <span class="pointer">></span><span id="cmd-text"></span><span class="cursor blink">&#8718;</span>
+    </div>
+      
+</body>
+    
+    
+
+</html>
