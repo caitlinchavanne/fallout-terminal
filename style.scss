@@ -1,171 +1,95 @@
 //create "terminal" font from ShareTechMono font file
-@mixin default {
-    postion: relative;
-    display: inline-block;
-}
-
 @font-face {
     font-family: "terminal";
     src: url(fonts/ShareTechMono-Regular.ttf);
 }
-//color variable for the terminal font color
-$font-color : rgb(26,255,128);
-
+//animation for blinking cursor
 @keyframes blink {
     from {opacity: 1;}
     to {opacity: 0;}
 }
+//color variable for the terminal font color
+$font-color : rgb(26,255,128);
+
+//----general rules----
 body {
-    
     background-color:black;
+    
     font-family: terminal;
     font-size:31px;
     color: $font-color;
-    top: 1px;
-    cursor: url(images/cursor.cur);
     
-    #loadcontent {
-        display: none;
-        span.cursor {
-            display: none;
-        }
-    }
-    #header {
-        display:none;
-        .headline {
-            
-            line-height: 40px;
-        }
-        #welcome {
-            
-        }
-        #password {
-            #attempts {
-                
-            }
-            .attempt-block {
-                
-                display: inline-block;
-                background: $font-color;
-                
-            }
-            #attempt1 {
-                
-            }
-            #attempt2 {
-                
-            }
-            #attempt3 {
-                
-            }       
-            #attempt4 {
-                
-            }
-        }
-        #netblock {
-            display:none;
-            span.userlogin {
-                
-            } 
-        }
-    }
-    div.screen {
-        position:absolute;
-        display:none;
-    }
-    #hack-container {
-        table {
-        box-sizing: border-box;
-            
-            tr {
-
-                td {
-
-                }
-
-                .space-cell, .pointer-cell {
-                color: black;
-
-                }
-                
-                .margin-cell {
-
-                }
-
-            }
-            
-        }
-    }
-    
-    #error {
-        
-    }
-    
-    #home {
-       
-        #docs {
-            
-        }
-        
-        #safe {
-            
-        }
-    }
-    
-    #documents {
-        
-    }
-    
-    #doc-sign {
-        top: 26%;
-        display:none;
-        
-    }
-    
-    #safe-control {
-        
-    }
-    
-    #locking {
-        
-    }
-    
-    #unlocking {
-        
-    }
-    
-    #cmd {
-        position: absolute;
-        bottom: 2%;
-        
-        .cursor {
-            font-size:45px;
-        }
-    }
-    
-    .highline {
+    div {
         display: inline-block;
-        padding-top:10px;
-        padding-bottom: 7px;
+        line-height: 36px;
     }
-    
-    .regline {
-        letter-spacing: .25px;
+}
+
+//----class rules----
+.attempt-block {   
+    display: inline-block;
+    background: $font-color;
+                
+}
+.space-cell, .pointer-cell {
+    color: black;
+}
+.cursor {
+    font-size:45px;
+}
+.selectable {
+}
+.selectable:hover {
+    background-color: $font-color;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+}
+.blink {
+    animation: blink .5s infinite;
+}
+.screen {
+    position:relative;
+    width: 100%;
+    display:none;
+    height: 700px;
+}
+
+//----id rules----
+#header-content {
+    display: none;
+}
+#netblock {
+    display:none;
+}
+#content {
+    position: absolute;
+    width: 100%;
+}
+#home-content {
+    display: none;
+    #doc-link, #safe-link {
+        display:block;
     }
-    
-    .selectable {
+}
+#docs-content {
+    #letter {
+        display: inline-block;
+        max-width: 921px; 
+    }   
+}
+#doc-sign {
+    top: 30%;
+    height: 700px;
+}
+#safe-control {
+    #engage, #safe-back  {
         display: block;
-        color: $font-color;
-        text-decoration: none;
     }
-    
-    .selectable:hover {
-        background-color: $font-color;
-        color: black;
-    }
-    
-    .blink {
-        animation: blink .5s infinite;
-    }
-    
+}
+#cmd {
+    display: none;
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
 }

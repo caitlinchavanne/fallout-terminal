@@ -89,7 +89,7 @@ for (i = 0; i < brackSets.length; i ++) {
 
 
 // wrap all selection types in classed divs
-var openDivSel = "<div class='selection'>";
+var openDivSel = "<div class='hack selection'>";
 var closeDiv = "</div>";
 
 var brackDivs = [];
@@ -114,5 +114,5 @@ for (i = 0; i < brackSets.length; i++) {
 //for (n = 0; n < oth; n++) {
     //brackLines.push(charDivs[n]);
 
-    brackLines[i].sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
+    //brackLines[i].sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
 
