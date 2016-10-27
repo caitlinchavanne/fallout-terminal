@@ -1,9 +1,13 @@
-
+//declare password variable
 var password;
-var passwordBank = ["jazzy", "fuzzy", "fizzy", "doozy", "booze", "kazoo", "juicy", "julep", "jelly", "jello"];
-passwordBank.sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
-var lineLengthAll = 12;
 
+//create password bank (add more?)
+var passwordBank = ["jazzy", "fuzzy", "fizzy", "doozy", "booze", "kazoo", "juicy", "julep", "jelly", "jello"];
+
+//randomize the password bank sorting
+passwordBank.sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
+
+// function to choose password
 function choosePass() {
     'use strict';
     var i = Math.floor(Math.random() * passwordBank.length);
@@ -11,10 +15,13 @@ function choosePass() {
 }
 choosePass();
 
+// declare variable to track remaining attempts
 var attemptsRemain = 4;
 
+// function to check remaining attempts and update attempt line
 function displayAttempts() {
-    var a2 = $("attempt2");
+    
+    var a2 = $("#attempt2");
     var a3 = $("#attempt3");
     var a4 = $("#attempt4");
     var att = $("#attempts");
@@ -47,72 +54,89 @@ function displayAttempts() {
     }
 }
 
-var nonLetters = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "=", "+", "|", ":", ";", "'", '"', ",", ".", "?", "/", "(", ")", "{", "}", "[", "]", "<", ">", "&#8726;"];
+//selectable non-letter filler characters
+var selectableNonLetters = ["<span class='selectable char'>`</span>", 
+                  "<span class='selectable char'>~</span>",
+                  "<span class='selectable char'>!</span>",
+                  "<span class='selectable char'>@</span>",
+                  "<span class='selectable char'>#</span>",
+                  "<span class='selectable char'>$</span>",
+                  "<span class='selectable char'>%</span>",
+                  "<span class='selectable char'>^</span>",
+                  "<span class='selectable char'>&</span>",
+                  "<span class='selectable char'>*</span>",
+                  "<span class='selectable char'>-</span>",
+                  "<span class='selectable char'>_</span>",
+                  "<span class='selectable char'>=</span>",
+                  "<span class='selectable char'>+</span>",
+                  "<span class='selectable char'>|</span>",
+                  "<span class='selectable char'>:</span>",
+                  "<span class='selectable char'>;</span>",
+                  "<span class='selectable char'>'</span>",
+                  '<span class="selectable char">"</span>',
+                  "<span class='selectable char'>,</span>",
+                  "<span class='selectable char'>.</span>",
+                  "<span class='selectable char'>?</span>",
+                  "<span class='selectable char'>/</span>",
+                  "<span class='selectable char'>(</span>",
+                  "<span class='selectable char'>)</span>",
+                  "<span class='selectable char'>{</span>",
+                  "<span class='selectable char'>}</span>",
+                  "<span class='selectable char'>[</span>",
+                  "<span class='selectable char'>]</span>",
+                  "<span class='selectable char'><</span>",
+                  "<span class='selectable char'>></span>"];
 
-var par = {open: "(", close:")"},
-    crl = {open: "{", close: "}"},
-    squ = {open: "[", close: "]"},
-    pnt = {open: "<", close: ">"};
+// bracket objects
+var par = {open: "<span class='bracket'><span class='selectable char'>(</span>", close: "<span class='selectable char'>)</span></span>"},
+    crl = {open: "<span class='bracket'><span class='selectable char'>{</span>", close: "<span class='selectable char'>}</span></span>"},
+    squ = {open: "<span class='bracket'><span class='selectable char'>[</span>", close: "<span class='selectable char'>]</span></span>"},
+    pnt = {open: "<span class='bracket'><span class='selectable char'><</span>", close: "<span class='selectable char'>></span></span>"};
 
+// bracket object bank
 var brackets = [par, crl, squ, pnt];
+
+// sort bracket object bank randomly
 brackets.sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
 
-var brack1 = [], brack2 = [], brack3 = [], brack4 = [], brack5 = [], brack6 = [], brack7 = [], brack8 = [], brack9 = [], brack10 = [];
+// arrays to hold bracket string characters
+var brackStrChar1 = [],
+    brackStrChar2 = [],
+    brackStrChar3 = [],
+    brackStrChar4 = [],
+    brackStrChar5 = [],
+    brackStrChar6 = [],
+    brackStrChar7 = [],
+    brackStrChar8 = [],
+    brackStrChar9 = [],
+    brackStrChar10 = [];
+// array to hold the bracket string character arrays
+var bracketStringChars = [brackStrChar1, brackStrChar2, brackStrChar3, brackStrChar4, brackStrChar5, brackStrChar6, brackStrChar7, brackStrChar8, brackStrChar9, brackStrChar10];
 
 //function to generate some nonletters into a random bracket pair
 function genBracks(z) {
-    var x = Math.floor(Math.random() * nonLetters.length);
-    var randNonLet = nonLetters[x];
+    var x = Math.floor(Math.random() * selectableNonLetters.length);
+    var randNonLet = selectableNonLetters[x];
     var ran4 = Math.floor(Math.random() * 4);
-    var openBr = brackets[ran4].open;
-    var closeBr = brackets[ran4].close;
-    z.push(openBr);
+    var openBracket = brackets[ran4].open;
+    var closeBracket = brackets[ran4].close;
+    z.push(openBracket);
     var i = Math.floor((Math.random() * 10) + 1);
     for (var x = 1; x < i; x++ ) {
-        z.push(nonLetters[0]);
-        nonLetters.sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
+        z.push(selectableNonLetters[x]);
+        selectableNonLetters.sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
     }
     z.push(closeBr);
-   
 }
-
-
-
-//collection of bracket set arrays
-var brackSets = [brack1, brack2, brack3, brack4, brack5, brack6, brack7, brack8, brack9, brack10];
-
-//generate 10 bracket sets
-for (i = 0; i < brackSets.length; i ++) {
-    genBracks(brackSets[i]);
+//generate bracket sets into brack string character arrays
+for (i = 0; i < bracketStringChars.length; i++) {
+    genBracks(bracketStringChars[i]);
     brackets.sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
 }
 
-
-// wrap all selection types in classed divs
-var openDivSel = "<div class='hack selection'>";
-var closeDiv = "</div>";
-
-var brackDivs = [];
-for (i = 0; i < brackSets.length; i++) {
-    brackDivs.push(openDivSel + brackSets[i].join("") + closeDiv);
+var joinedBrackets = [];
+//join brack arrays into bracket strings into new joined brackets arrays
+for (i = 0; i < bracketStringChars.length; i++) {
+    var x = bracketStringChars[i].join("");
+    joinedBracks.push(x);
 }
-
-var passDivs = [];
-for (i = 0; i < passwordBank.length; i++) {
-    passDivs.push(openDivSel + passwordBank[i] + closeDiv);
-}
-
-var charDivs = [];
-for (i = 0; i < nonLetters.length; i++) {
-    charDivs.push(openDivSel + nonLetters[i] + closeDiv);
-}
-
-var brackLines = [];
-for (i = 0; i < brackSets.length; i++) {
-    brackLines.push(brackDivs[i]);}
-//var oth = 12 - brlength;
-//for (n = 0; n < oth; n++) {
-    //brackLines.push(charDivs[n]);
-
-    //brackLines[i].sort(function (a, b) {'use strict'; return 0.5 - Math.random(); });
-

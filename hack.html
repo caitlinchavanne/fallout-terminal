@@ -4,63 +4,25 @@
     <title>Terminal</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="scripts/jquery-3.1.1.js"></script>
-    <!--<script src="scripts/scripts.js"></script>-->
     <script src="scripts/hack.js"></script>
     <script>
         $(document).ready(function(){
             console.log(joinedBracks);
-            console.log(brackLines);
+            //console.log(brackLines);
         });
     </script>
 </head>
     
 <body> 
-    
-    <!-- start screen containing a pointer and blinking cursor -->
-    <div id="start-content">
-        <span class="pointer">></span>
-        <span class="cursor blink">&#8718;</span>
-    </div>
-
-    <!-- load screen -->
-    <div id="load-content" class="screen">
-        <span id="loadln1">WELCOME TO ROBCO INDUSTRIES (TM) TERMLINK</span><br><br>
-        <span id="cmd1"><span class="pointer">></span><span id="cmd1text">SET TERMINAL/INQUIRE</span></span><br><br>
-        <span id="loadln2">RIT-V300</span><br><br>
-        <span id="cmd2"><span class="pointer">></span><span id="cmd2text">SET FILE/PROTECTION-OWNER:RWED ACCOUNTS.F<br>
-        <span id="cmd3"><span class="pointer">></span><span id="cmd3text">SET HALT RESTART/MAINT<br><br>
-        <span id="loadln3">Initializing Robco Industries(TM) MF Boot Agent v 2.3.0</span><br>
-        <span id="loadln4">RETROS BIOS</span><br>
-        <span id="loadln5">RBIOS-4.02.08.00 52EE5.E7.E8</span><br>
-        <span id="loadln6">Copyright 2201-2203 Robco Ind.</span><br>
-        <span id="loadln7">Uppermen: 64 KB</span><br>
-        <span id="loadln8">Root (5AB)</span><br>
-        <span id="loadln9">Maintenance Mode</span><br><br>
-        <span id="cmd4"><span class="pointer">></span><span id="cmd4text">RUN DEBUG/ACCOUNTS.F
-    </div>
-            
-    <!-- full heading container -->
-    <div id="header-content">     
-        <!-- main welcome line -->
-        <span id ="welcome" class="headline">Welcome to ROBCO Industries (TM) Termlink</span><br>
+    <span id ="welcome" class="headline">Welcome to ROBCO Industries (TM) Termlink</span><br>
         <!-- password attempts-->
         <span id="password" class="headline">Password Required<br><br>
         <span id="attempts"></span> ATTEMPT(S) LEFT:  
         <span class="attempt-block" id="attempt1">[]</span>
         <span class="attempt-block" id="attempt2">[]</span>
         <span class="attempt-block" id="attempt3">[]</span>
-        <span class="attempt-block" id="attempt4">[]</span></span><br><br>
-        <!-- "network" info block -->
-        <span id ="netblock">=============================================<br>
-        Suffolk County Charter School Network<br>
-        <span id="userlogin"></span><br>
-        =============================================<br><br></span>
-    </div> <br>
-
-    <div id="content">
-    <!-- hack layout container -->
-    <div class="screen" id="hack-content">
-        <table>
+        <span class="attempt-block" id="attempt4">[]</span></span> <br><br>
+    <table>
             <tr>
                 <td id=“margin1” class=“margin-cell”>0xFC49</td>
                 <td class="space-cell">x</td>
@@ -254,59 +216,7 @@
                 <td id=“console1” class=“console-cell”>............</td>
             </tr>
         </table>
-    </div>
-
-    <!-- home screen container -->    
-    <div class="screen" id="home-content">
-        <span class="selectable" id="doc-link">[ >Documents ]</span><br><br>
-        <span class="selectable" id="safe-link">[ >Safe Control ]</span>
-    </div>
-        
-    <!-- document screen container -->    
-    <div class="screen" id="doc-content">
-        <span id="greet" class="highline">Principal Hudson,</span><br><br>
-        <span id="letter" class="regline">
-            Again I thank you for your school's willingness to participate in the Nutritional Alternative Paste Program, or NAPP for short. You and your students are doing a service to this country by helping us push the limits on our knowledge of food and nutrition science.<br>
-            During the period of this program, nothing but NAP should be served to the students. No outside food should be tolerated on school grounds. We will be sending scientists periodically to observe reactions to NAP, and ensure proper testing conditions.<br>
-            Noncompliance will result in funds revoked, so please make sure your faculty and students remain obedient.<br>
-        </span>
-    </div>
-    
-    <!-- document signature screen container -->    
-    <div class="screen" id="doc-sign">
-        <span id="sign">-Dr. Jerry Gibson</span>
-    </div>
-        
-    <!-- safe status and control screen container -->    
-    <div class="screen" id="safe-control">
-    
-        <p>Safe Lock Mechanism Status: <span id="status"></span><br><br>
-        <a id="engage" class="selectable"></a></p><br>
-        <span class="selectable" id="safe-back">[ >Back ]</span>
-    
-    </div>
-    <!-- safe locking screen container -->    
-    <div class="screen" id="locking">
-        ...Checking Clearance..........<br>
-        ...AUTHORIZED.................<br>
-        ...Locking Mechanism Enable...<br>
-    </div>
-    <!-- safe unlocking screen container -->    
-    <div class="screen" id="unlocking">
-        ...Checking Clearance..........<br>
-        ...AUTHORIZED.................<br>
-        ...Locking Mechanism Disable..<br>
-    </div>
-    
-    </div>         
-    <!-- console line container -->    
-    <div id="cmd">
-        <span class="pointer">></span><span id="cmd-text"></span><span class="cursor blink">&#8718;</span>
-    </div>        
-            
-            
-</body>
     
     
-
-</html>
+    </body></html>
+    
